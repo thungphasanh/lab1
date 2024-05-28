@@ -1,0 +1,41 @@
+<router-outlet>
+  <div class="container">
+    <div class="card text-center col-6 border-2 m-auto mt-3 shadow-lg border border-primary">
+      <div class="card-header fw-bolder fs-5">
+        Thong tin sinh vien
+      </div>
+      <div class="card-body fs-5">
+        <ul class="list-group">
+          <li class="list-group-item"><img class="col-5" src="assets/{{student.hinh}}"></li>
+          <li class="list-group-item">Ho ten: {{student.hoten}}</li>
+          <li class="list-group-item">Ngay sinh: {{student.ngaysinh}}</li>
+          <li class="list-group-item">Phai: {{student.phai==0? "Nu":"Nam"}}</li>
+          <li class="list-group-item">Diem: {{student.diem}}</li>
+        </ul>
+      </div>
+      <div class="card-footer text-body-secondary">
+        Lab 1 Angular
+      </div>
+    </div>
+  
+    <div class="card text-center fs-5 col-6 border-2 m-auto mt-5 mb-5 shadow-lg border border-primary">
+      <div class="card-header fw-bolder">
+        Danh sach nha khoa hoc
+      </div>
+      <div class="card-body">
+        <div id="ds"></div>
+        {{render()}}
+      </div>
+      <div class="card-footer text-body-secondary">
+        Co <b>{{listnhaKH.length}}</b> nha khoa hoc trong danh sach
+      </div>
+    </div>
+  
+    <div id="listSP" class="card-body d-flex flex-wrap">
+      {{renderSP()}}
+    </div>
+  </div>
+  <app-bai2></app-bai2>
+  <!-- <app-parent></app-parent> -->
+  <app-cha></app-cha>
+</router-outlet>

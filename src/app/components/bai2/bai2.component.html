@@ -1,0 +1,29 @@
+<p class="card-body fs-5">{{title}}</p>
+<button class="btn btn-primary"(click)="clickMe()">clickMe</button>
+<img [src]="image" width="300px"> <br> <hr>
+<input type="text" [(ngModel)]="search" placeholder="tim kiem" (input)="searchSP()" >
+
+<table class="table table-hover table-striped text-center">
+    <thead>
+        <th>id</th>
+        <th>an hien</th>
+        <th>hinh anh</th>
+        <th>ten san pham</th>
+        <th>ma san pham</th>
+        <th>gia san pham</th>
+        <th>ngay</th>
+        <th>danh gia</th>
+    </thead>
+    <tbody>
+        <tr *ngFor="let sp of products">
+            <td>{{sp.id}}</td>
+            <td><button class="btn btn-primary"(click)="clickMe2()">an hien</button></td>
+            <td><img [src]="sp.urlImage" *ngIf="showimage" width="150px"></td>
+            <td>{{sp.tensp}}</td>
+            <td>{{sp.code}}</td>
+            <td>{{sp.giasp | currency:"VND"}}</td>
+            <td>{{sp.ngay | date: "dd/MM/yyyy"}}</td>
+            <td>{{sp.starRate | star}}</td>
+        </tr>
+    </tbody>
+</table>
